@@ -1,2 +1,13 @@
-const withNextra = require('nextra')('nextra-theme-blog', './theme.config.js')
-module.exports = withNextra()
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/project.html',
+      },
+    ]
+  },
+}
+
+module.exports = nextConfig
