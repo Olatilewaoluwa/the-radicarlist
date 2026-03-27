@@ -197,7 +197,7 @@ section{position:relative;z-index:2}
 .env-body{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,82,48,.5),rgba(184,114,42,.3));border:1px solid rgba(184,114,42,.5);border-radius:4px 4px 6px 6px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 24px rgba(139,82,48,.25),inset 0 1px 0 rgba(240,228,204,.12)}
 .env-body::before{content:'';position:absolute;top:0;left:0;right:0;height:27px;background:linear-gradient(135deg,rgba(184,114,42,.35),rgba(139,82,48,.4));clip-path:polygon(0 0,50% 55%,100% 0);border-radius:4px 4px 0 0;transition:clip-path .4s cubic-bezier(.22,1,.36,1),background .3s}
 .env-btn:hover .env-body::before{clip-path:polygon(0 0,50% 85%,100% 0);background:linear-gradient(135deg,rgba(212,83,26,.5),rgba(184,114,42,.5))}
-.env-body::after{content:'&#10022;';position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--orange);transition:top .4s cubic-bezier(.22,1,.36,1),opacity .3s;pointer-events:none;z-index:2}
+.env-body::after{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--orange);transition:top .4s cubic-bezier(.22,1,.36,1),opacity .3s;pointer-events:none;z-index:2}
 .env-btn:hover .env-body::after{top:5px;opacity:.6}
 .env-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);position:relative;z-index:1;margin-top:6px}
 
@@ -354,6 +354,8 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
   <a href="#hero" class="nlogo">THE RADI<svg viewBox="0 0 160 56" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 38C8 38 8 32 12 30L30 15Q33 12 37 12H123Q127 12 130 15L148 30C152 32 152 38 152 38V44H8V38Z" fill="#F0E4CC"/><path d="M2 32Q1 32 1 36V44Q1 47 4 47H8V32H2Z" fill="#B8722A"/><path d="M152 32H158Q159 32 159 36V44Q159 47 156 47H152V32Z" fill="#B8722A"/><rect x="1" y="44" width="158" height="5" rx="2.5" fill="#8B5230"/><circle cx="36" cy="51" r="10" fill="#110D07" stroke="#8B5230" stroke-width="2.5"/><circle cx="36" cy="51" r="5.5" fill="#8B5230"/><circle cx="124" cy="51" r="10" fill="#110D07" stroke="#8B5230" stroke-width="2.5"/><circle cx="124" cy="51" r="5.5" fill="#8B5230"/><path d="M37 12L20 30H78V12Z" fill="rgba(212,83,26,0.2)"/><path d="M82 12V30H140L123 12Z" fill="rgba(212,83,26,0.2)"/><line x1="80" y1="12" x2="80" y2="30" stroke="rgba(212,83,26,0.4)" stroke-width="1.5"/><rect x="1" y="32" width="9" height="5" rx="1.5" fill="#D4531A" opacity="0.9"/><rect x="150" y="32" width="9" height="5" rx="1.5" fill="#F0E4CC" opacity="0.55"/></svg>LIST</a>
   <ul class="nlinks">
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#cars">Cars</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -400,7 +402,7 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
       <a href="#cars" class="gb">Browse Cars</a>
     </div>
     <div class="hstats" id="hero-stats">
-      <div><div class="stat-n"><span id="c1" data-target="5">0</span><span>+</span></div><div class="stat-l">Years Creating</div></div>
+      <div><div class="stat-n"><span id="c1" data-target="3">0</span><span>+</span></div><div class="stat-l">Years Creating</div></div>
       <div><div class="stat-n"><span id="c2" data-target="20">0</span><span>+</span></div><div class="stat-l">Projects Done</div></div>
       <div><div class="stat-n">&#8734;</div><div class="stat-l">Ideas</div></div>
     </div>
@@ -430,7 +432,7 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
       <div class="stag">About Me</div>
       <div class="mask-wrap"><h2 class="ahd mask-item">Art.<br/>Design.<br/><em>Animate.</em></h2></div>
       <p class="abody sg" style="margin-bottom:20px">I am <strong>THE RADICARLIST</strong>, a multidisciplinary creative working at the intersection of art, design, motion, and commerce. My work does not just look good. It <strong>moves people</strong> and tells stories that stick.<br/><br/>
-      With 5 years of experience across UI/UX, animation, content creation, and automobile sales, I bring a <strong>radical and versatile perspective</strong> to every project I take on.<br/><br/>
+      With 3 years of experience across UI/UX, animation, content creation, and automobile sales, I bring a <strong>radical and versatile perspective</strong> to every project I take on.<br/><br/>
       Whether you need a product that converts, a brand that turns heads, content that builds an audience, or the perfect car at a great price, <strong>I am your person.</strong></p>
       <div style="display:flex;gap:10px;flex-wrap:wrap" class="sg">
         <a href="#contact" class="gb acc" style="font-size:10px">Get In Touch</a>
@@ -466,7 +468,7 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
 <!-- PORTFOLIO -->
 <section id="portfolio" class="sp">
   <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
-    <div><div class="stag">Case Studies</div><div class="mask-wrap"><h2 class="shd mask-item">My<br/><em>Projects</em></h2></div></div>
+    <div><div class="stag">DESIGNS</div><div class="mask-wrap"><h2 class="shd mask-item">My<br/><em>Projects</em></h2></div></div>
     <p style="font-family:var(--fc);font-style:italic;font-size:14px;color:var(--muted);max-width:220px;text-align:right;line-height:1.7" class="sg">Click any project to see full screens and case study details.</p>
   </div>
   <div class="pgrid"><div class="pcard gc sg" onclick="openModal('wanderlust')" style="cursor:none">
