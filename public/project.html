@@ -332,6 +332,23 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
   .cvis{
   position:relative;
   overflow:hidden;
+  border-radius:inherit;
+  min-height:260px;
+}
+
+.cvis::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(10,7,3,.72) 0%,
+    rgba(10,7,3,.28) 45%,
+    rgba(10,7,3,.08) 100%
+  );
+  opacity:.72;
+  transition:opacity .35s ease;
+  z-index:1;
 }
 
 .cimg{
@@ -340,6 +357,7 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
   object-fit:cover;
   display:block;
   border-radius:inherit;
+  transition:transform .5s ease;
 }
 
 .cvis .cimg{
@@ -357,14 +375,62 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
   top:12px;
   left:12px;
   z-index:3;
+  padding:6px 10px;
+  border-radius:999px;
+  backdrop-filter:blur(8px);
 }
 
 .ccard{
-  transition:transform .3s ease, box-shadow .3s ease;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
 }
 
 .ccard:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,.28);
+}
+
+.ccard:hover .cvis::after{
+  opacity:.9;
+}
+
+.ccard:hover .cimg{
+  transform:scale(1.06);
+}
+
+.cinfo{
+  position:relative;
+  z-index:4;
+  transition:transform .35s ease;
+}
+
+.ccard:hover .cinfo{
+  transform:translateY(-4px);
+}
+
+.cmake,
+.cname,
+.cspecs,
+.cprice{
+  transition:all .35s ease;
+}
+
+.ccard:hover .cname{
+  color:#fff7eb;
+}
+
+.ccard:hover .cprice{
+  color:#f6d9ac;
+}
+
+.ceq{
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+.ccard:hover .ceq{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
 }
 </style>
 </head>
