@@ -496,6 +496,82 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
   align-items:center;
   justify-content:center;
 }
+
+  /* SOCIAL CARD BASE */
+.soclink{
+  position:relative;
+  overflow:hidden;
+  transition:all .35s ease;
+  border:1px solid rgba(184,114,42,.15);
+}
+
+/* HOVER LIFT */
+.soclink:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  border-color:rgba(184,114,42,.4);
+}
+
+/* GLOW BACKGROUND EFFECT */
+.soclink::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center,
+    rgba(184,114,42,.25),
+    transparent 70%);
+  opacity:0;
+  transition:opacity .4s ease;
+  z-index:0;
+}
+
+.soclink:hover::before{
+  opacity:1;
+}
+
+/* KEEP CONTENT ABOVE GLOW */
+.soclink > *{
+  position:relative;
+  z-index:2;
+}
+
+/* ICON BASE */
+.soc-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.soc-icon img{
+  width:22px;
+  height:22px;
+  object-fit:contain;
+  transition:all .35s ease;
+}
+
+/* ICON GLOW EFFECT */
+.soclink:hover .soc-icon img{
+  transform:scale(1.15);
+  filter:drop-shadow(0 0 6px rgba(184,114,42,.6));
+}
+
+/* TEXT SMOOTH EFFECT */
+.soc-name,
+.soc-handle{
+  transition:all .3s ease;
+}
+
+.soclink:hover .soc-name{
+  color:#fff7eb;
+}
+
+.soclink:hover .soc-handle{
+  opacity:.9;
+}
+
+.soclink:hover{
+  backdrop-filter:blur(6px);
+}
   
 </style>
 </head>
