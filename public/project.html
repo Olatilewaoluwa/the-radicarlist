@@ -1179,13 +1179,44 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
 
 </div>
     </div>
-    <div class="sg" style="padding-top:32px">
-      <div class="cfi"><label class="cflabel">Your Name</label><input type="text" class="cfinput" placeholder="e.g. Adaeze Okonkwo"/></div>
-      <div class="cfrow"><div><label class="cflabel">Email</label><input type="email" class="cfinput" placeholder="your@email.com"/></div><div><label class="cflabel">Subject</label><input type="text" class="cfinput" placeholder="Project / Collab / Car..."/></div></div>
-      <div class="cfi"><label class="cflabel">Message</label><textarea class="cfinput" rows="6" placeholder="Tell me about your project, idea, or which car you are looking for..."></textarea></div>
-      <button class="gb solid" style="width:100%;justify-content:center;font-size:12px;padding:16px;border-radius:14px" onclick="alert('Message sent! I will get back to you within 24 hours.')">Send Message <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      <p style="font-size:11px;color:var(--muted);margin-top:12px;text-align:center;font-family:var(--fc);font-style:italic">I respond within 24 hours, usually faster.</p>
+    <form action="https://formspree.io/f/xdapjwvk" method="POST">
+
+  <div class="cfi">
+    <label class="cflabel">Your Name</label>
+    <input type="text" name="name" class="cfinput" placeholder="e.g. Adaeze Okonkwo" required>
+  </div>
+
+  <div class="cfrow">
+    <div>
+      <label class="cflabel">Email</label>
+      <input type="email" name="email" class="cfinput" placeholder="your@email.com" required>
     </div>
+
+    <div>
+      <label class="cflabel">Subject</label>
+      <input type="text" name="subject" class="cfinput" placeholder="Project / Collab / Car..." required>
+    </div>
+  </div>
+
+  <div class="cfi">
+    <label class="cflabel">Message</label>
+    <textarea name="message" class="cfinput" rows="6" placeholder="Tell me about your project, idea, or which car you are looking for..." required></textarea>
+  </div>
+
+  <input type="hidden" name="_subject" value="New message from Radicarlist Portfolio">
+
+  <button type="submit" class="gb solid" style="width:100%;justify-content:center;font-size:12px;padding:16px;border-radius:14px">
+    Send Message
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </button>
+
+  <p style="font-size:11px;color:var(--muted);margin-top:12px;text-align:center;font-family:var(--fc);font-style:italic">
+    I respond within 24 hours, usually faster.
+  </p>
+
+</form>
   </div>
 </section>
 
