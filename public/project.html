@@ -572,6 +572,30 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
 .soclink:hover{
   backdrop-filter:blur(6px);
 }
+
+  .form-popup{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  background:rgba(139,82,48,.95);
+  color:#F0E4CC;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1px solid rgba(240,228,204,.12);
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+  font-size:12px;
+  letter-spacing:.5px;
+  z-index:9999;
+  opacity:0;
+  transform:translateY(20px);
+  pointer-events:none;
+  transition:all .35s ease;
+}
+
+.form-popup.show{
+  opacity:1;
+  transform:translateY(0);
+}
   
 </style>
 </head>
@@ -1179,7 +1203,7 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
 
 </div>
     </div>
-    <form action="https://formspree.io/f/xdapjwvk" method="POST">
+    <form id="contactForm" action="https://formspree.io/f/xdapjwvk" method="POST">
 
   <div class="cfi">
     <label class="cflabel">Your Name</label>
@@ -1205,7 +1229,7 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
 
   <input type="hidden" name="_subject" value="New message from Radicarlist Portfolio">
 
-  <button type="submit" class="gb solid" style="width:100%;justify-content:center;font-size:12px;padding:16px;border-radius:14px">
+  <button id="sendBtn" type="submit" class="gb solid" style="width:100%;justify-content:center;font-size:12px;padding:16px;border-radius:14px">
     Send Message
     <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -1217,6 +1241,8 @@ footer{padding:22px 56px;border-top:1px solid var(--gbd);display:flex;justify-co
   </p>
 
 </form>
+
+<div id="formPopup" class="form-popup">Message sent successfully</div>
   </div>
 </section>
 
@@ -1344,6 +1370,52 @@ document.querySelectorAll('.cfbtn').forEach(btn=>{
 });
 
 window.addEventListener('resize',()=>ScrollTrigger.refresh());
+  <script>
+  const contactForm = document.getElementById('contactForm');
+  const formPopup = document.getElementById('formPopup');
+  const sendBtn = document.getElementById('sendBtn');
+
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const action = contactForm.getAttribute('action');
+
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = 'Sending...';
+
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        formPopup.classList.add('show');
+
+        setTimeout(() => {
+          formPopup.classList.remove('show');
+        }, 3000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      alert('Something went wrong. Please check your internet and try again.');
+    }
+
+    sendBtn.disabled = false;
+    sendBtn.innerHTML = `
+      Send Message
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    `;
+  });
+</script>
 </script>
 </body>
 </html>
