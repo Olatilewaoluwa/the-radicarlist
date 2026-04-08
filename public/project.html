@@ -1369,24 +1369,8 @@ document.querySelectorAll('.cfbtn').forEach(btn=>{
   });
 });
 
-<script>
-gsap.registerPlugin(ScrollTrigger);
+window.addEventListener('resize',()=>ScrollTrigger.refresh());
 
-/* LOADER */
-const lchars = document.querySelectorAll('.lchar,lcar');
-const loaderFill = document.getElementById('loader-fill');
-let p = 0;
-const tick = setInterval(() => {
-  p = Math.min(p + Math.random() * 7, 92);
-  loaderFill.style.width = p + '%';
-}, 55);
-
-window.addEventListener('load', () => {
-  clearInterval(tick);
-  loaderFill.style.width = '100%';
-});
-
-/* CONTACT FORM POPUP */
 const contactForm = document.getElementById('contactForm');
 const formPopup = document.getElementById('formPopup');
 const sendBtn = document.getElementById('sendBtn');
