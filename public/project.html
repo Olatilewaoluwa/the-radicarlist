@@ -330,7 +330,9 @@ section{position:relative;z-index:2}
 /* PROJECT MODAL */
 .pmodal{position:fixed;inset:0;z-index:500;background:rgba(10,7,3,.92);backdrop-filter:blur(20px);display:flex;align-items:flex-start;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.22,1,.36,1);overflow-y:auto;padding:40px 24px}
 .pmodal.open{opacity:1;pointer-events:all}
-.pmodal-inner{width:100%;max-width:1000px;background:linear-gradient(135deg,rgba(240,228,204,.06),rgba(184,114,42,.03),rgba(240,228,204,.04));border:1px solid var(--gbd);border-radius:28px;padding:44px;box-shadow:0 40px 100px rgba(0,0,0,.6),inset 0 1px 0 rgba(240,228,204,.1);position:relative;transform:translateY(24px);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.pmodal-inner{width:min(1500px,96vw);
+max-height:95vh;
+overflow-y:auto;background:linear-gradient(135deg,rgba(240,228,204,.06),rgba(184,114,42,.03),rgba(240,228,204,.04));border:1px solid var(--gbd);border-radius:28px;padding:44px;box-shadow:0 40px 100px rgba(0,0,0,.6),inset 0 1px 0 rgba(240,228,204,.1);position:relative;transform:translateY(24px);transition:transform .4s cubic-bezier(.22,1,.36,1)}
 .pmodal.open .pmodal-inner{transform:translateY(0)}
 .pmodal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(240,228,204,.08);border:1px solid var(--gbd);color:var(--muted);font-size:14px;cursor:none;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .pmodal-close:hover{background:rgba(212,83,26,.2);color:var(--cream)}
@@ -839,6 +841,91 @@ transition:.35s;
 .modal-btn:hover{
 
 transform:translateY(-4px);
+
+}
+
+  /* ===== SINGLE PROJECT MODAL ===== */
+
+.single-project{
+
+width:100%;
+
+margin:35px 0;
+
+border-radius:22px;
+
+overflow:hidden;
+
+background:#050505;
+
+border:1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:75vh;
+
+}
+
+.single-project video,
+.single-project img{
+
+width:100%;
+
+height:75vh;
+
+display:block;
+
+object-fit:contain;
+
+background:#000;
+
+border-radius:18px;
+
+}
+
+.project-info{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
+
+gap:40px;
+
+margin-top:30px;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.project-info h4{
+
+font-size:12px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:var(--orange);
+
+margin-bottom:8px;
+
+}
+
+.project-info p{
+
+font-size:14px;
+
+color:var(--muted);
+
+line-height:1.7;
 
 }
   
