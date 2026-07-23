@@ -229,6 +229,22 @@ section{position:relative;z-index:2}
 
     transition:transform .6s ease;
 }
+  .pvis::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.55) 0%,
+        rgba(0,0,0,.18) 45%,
+        rgba(0,0,0,0) 100%
+    );
+    pointer-events:none;
+    transition:opacity .35s ease;
+}
+.pcard:hover .pvis::after{
+    opacity:.8;
+}
   .pcard:hover .pvis img,
 .pcard:hover .pvis video{
     transform:scale(1.05);
