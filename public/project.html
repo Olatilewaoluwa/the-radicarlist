@@ -210,7 +210,10 @@ section{position:relative;z-index:2}
 #portfolio{background:var(--bg)}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
 .pcard{border-radius:22px;overflow:hidden;cursor:none;transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.pcard:hover{transform:translateY(-7px)}
+.pcard:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+}
 .pcard:hover .ew{transform:scale(1.08) translateY(-6px)!important}
 .pvis{
     position: relative;
