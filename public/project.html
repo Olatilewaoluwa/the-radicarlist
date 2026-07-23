@@ -239,7 +239,13 @@ section{position:relative;z-index:2}
 .pv4{background:linear-gradient(135deg,#150804,#361505)}
 .pv5{background:linear-gradient(135deg,#080C18,#101828)}
 .ptag{padding:4px 12px;border-radius:100px;background:rgba(212,83,26,.1);border:1px solid rgba(212,83,26,.22);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange)}
-.pinfo{padding:22px 26px 28px}
+.pinfo{
+    padding:22px 26px 28px;
+    transition:transform .35s ease;
+}
+  .pcard:hover .pinfo{
+    transform:translateY(-4px);
+}
 .plink{transition:gap .25s}
 .pcard:hover .plink{gap:14px!important}
 
